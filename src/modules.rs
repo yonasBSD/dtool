@@ -13,6 +13,7 @@ use linked_hash_map::LinkedHashMap;
 use std::iter;
 mod aes;
 mod base;
+mod base32;
 mod base58;
 mod base64;
 mod case;
@@ -70,6 +71,7 @@ impl<'a, 'b> ModuleManager<'a, 'b> {
 		mm.register(hex::module());
 		mm.register(time::module());
 		mm.register(number_system::module());
+		mm.register(base32::module());
 		mm.register(base58::module());
 		mm.register(base64::module());
 		mm.register(url::module());

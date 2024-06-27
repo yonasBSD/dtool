@@ -4,6 +4,7 @@
 - [Hex / UTF-8 string / binary / byte array conversion](#hex--utf-8-string--binary--byte-array-conversion)
 - [Timestamp / date conversion](#timestamp--date-conversion)
 - [Number 10/2/8/16 base conversion](#number-102816-base-conversion)
+- [Hex / base32 conversion](#hex--base32-conversion)
 - [Hex / base58 conversion](#hex--base58-conversion)
 - [Hex / base64 conversion](#hex--base64-conversion)
 - [URL encode / decode](#url-encode--decode)
@@ -53,6 +54,14 @@
 |    ns     |  Number system<br>Output binary<br>v0.1.0   |            $ dtool ns -b 256<br>0b100000000            |
 |    ns     |   Number system<br>Output octal<br>v0.1.0   |               $ dtool ns -o 256<br>0o400               |
 |    ns     |Number system<br>Output hexadecimal<br>v0.1.0|               $ dtool ns -x 256<br>0x100               |
+
+
+## Hex / base32 conversion
+
+| Sub command | Desc                            | Example                                                                                                |
+|-------------|---------------------------------|--------------------------------------------------------------------------------------------------------|
+| h2b32       | Convert hex to base32<br>v0.1.0 | $ dtool h2b32 0x0075774f5d9963c021009a58d7d2d8e83771dd6c7a<br>AB2XOT25TFR4AIIATJMNPUWY5A3XDXLMPI====== |
+| b322h       | Convert base32 to hex<br>v0.1.0 | $ dtool b322h 12dvBhvPEPniQmBmgvj4qpJEodT7P<br>0x0075774f5d9963c021009a58d7d2d8e83771dd6c7a            |
 
 
 ## Hex / base58 conversion
