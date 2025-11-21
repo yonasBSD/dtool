@@ -32,6 +32,8 @@ mod time;
 mod unicode;
 mod url;
 mod usage;
+mod qr;
+mod cam;
 
 #[derive(Clone)]
 pub struct Module<'a, 'b> {
@@ -85,6 +87,8 @@ impl<'a, 'b> ModuleManager<'a, 'b> {
 		mm.register(sm4::module());
 		mm.register(eddsa::module());
 		mm.register(srdsa::module());
+		mm.register(qr::module());
+		mm.register(cam::module());
 		mm
 	}
 
