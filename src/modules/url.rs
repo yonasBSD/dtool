@@ -29,7 +29,7 @@ pub fn commands<'a, 'b>() -> Vec<Command<'a, 'b>> {
 fn ue(matches: &ArgMatches) -> Result<Vec<String>, String> {
 	let input = base::input_string(matches)?;
 
-	let result = urlencoding::encode(&input);
+	let result = urlencoding::encode(&input).into_owned();
 
 	Ok(vec![result])
 }
@@ -37,7 +37,7 @@ fn ue(matches: &ArgMatches) -> Result<Vec<String>, String> {
 fn ud(matches: &ArgMatches) -> Result<Vec<String>, String> {
 	let input = base::input_string(matches)?;
 
-	let result = urlencoding::decode(&input).map_err(|_| "Decode failed")?;
+	let result = urlencoding::decode(&input).map_err(|_| "Decode failed")?.into_owned();
 
 	Ok(vec![result])
 }
