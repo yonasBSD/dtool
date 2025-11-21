@@ -52,4 +52,5 @@ p384 = "0.8.0"
 qrcode = "0.14.1"
 image = "0.25.9"
 nokhwa = { version = "0.10.10", features = ["input-native", "output-threaded"] }
+minifb = "0.24"
 rqrr = "0.10.0"
