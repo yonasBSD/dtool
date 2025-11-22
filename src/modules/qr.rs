@@ -261,7 +261,7 @@ mod cases {
 					output: vec![],
 					is_example: true,
 					is_test: false, // Output is binary, hard to test with string comparison
-					since: "0.13.0".to_string(),
+					since: "0.15.0".to_string(),
 				}],
 			),
 			(
@@ -270,7 +270,7 @@ mod cases {
 					desc: "Scan QR code from camera (interactive)".to_string(),
 					input: vec![],
 					output: vec![],
-					is_example: false,
+					is_example: true,
 					is_test: false, // Interactive web-based command, cannot be tested automatically
 					since: "0.15.0".to_string(),
 				}],

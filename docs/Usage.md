@@ -19,6 +19,7 @@
 - [SM4 encrypt / decrypt](#sm4-encrypt--decrypt)
 - [EdDSA (Ed25519)](#eddsa-ed25519)
 - [sr25519 signature](#sr25519-signature)
+- [QR Code](#qr-code)
 
 ## Hex / UTF-8 string / binary / byte array conversion
 
@@ -260,5 +261,13 @@
 |   sr_sk   |   sr25519 calculate secret key from mini s<br>ecret key<br>v0.8.0   |                                        $ dtool sr_sk -m 0xc243239f434f7a4b0ab8d4600537001e6479c807c\\<br>3d3623f99c8ad9f2a588837<br>0xb0f4e5710d79bf6a46391e1c6e50a883af767636d55bcad178aa7ec7f1\\<br>aa750dee6c27bbe26656a29f06ea1612461a86a190db16b31ddd6b78354f\\<br>b6ba57bf7d                                         |
 |   sr_pk   |    sr25519 calculate public key<br>Use mini secret key<br>v0.8.0    |                                                                           $ dtool sr_pk -m 0xc243239f434f7a4b0ab8d4600537001e6479c807c\\<br>3d3623f99c8ad9f2a588837<br>0x6a8ee649b31efe7aabd8d5af58f85c60f12c48f8aa880cb50ae4cd5710\\<br>9e9d6c                                                                            |
 |   sr_pk   |      sr25519 calculate public key<br>Use secret key<br>v0.8.0       |                                        $ dtool sr_pk -s 0xb0f4e5710d79bf6a46391e1c6e50a883af767636d\\<br>55bcad178aa7ec7f1aa750dee6c27bbe26656a29f06ea1612461a86a190d\\<br>b16b31ddd6b78354fb6ba57bf7d<br>0x6a8ee649b31efe7aabd8d5af58f85c60f12c48f8aa880cb50ae4cd5710\\<br>9e9d6c                                         |
+
+
+## QR Code
+
+|Sub command|                Desc                 |       Example        |
+|-----------|-------------------------------------|----------------------|
+|   s2qr    |Convert string to QR code (PNG)<br>Generate QR code for 'hello'<br>v0.15.0|$ dtool s2qr hello|
+|   qr2s    |Convert QR code image to string<br>v0.15.0|$ dtool qr2s|
 
 
