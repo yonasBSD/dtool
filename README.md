@@ -38,7 +38,7 @@ Now `dtool` supports:
 - [SM4 encrypt / decrypt](./docs/Usage.md#sm4-encrypt--decrypt)
 - [EdDSA (Ed25519)](./docs/Usage.md#eddsa-ed25519)
 - [sr25519 signature](./docs/Usage.md#sr25519-signature)
-- [qr code converion and scaning](./docs/Usage.md#QR-Code)
+- [QR code convertion and scaning](./docs/Usage.md#QR-Code)
 
 ## Usage
 
