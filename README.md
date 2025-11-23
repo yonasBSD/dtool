@@ -39,6 +39,8 @@ Now `dtool` supports:
 - [EdDSA (Ed25519)](./docs/Usage.md#eddsa-ed25519)
 - [sr25519 signature](./docs/Usage.md#sr25519-signature)
 - [QR code convertion and scaning](./docs/Usage.md#QR-Code)
+- [JWT encode / decode / verify](./docs/Usage.md#jwt-encode--decode--verify)
+- [UUID generation and parsing](./docs/Usage.md#uuid-generation-and-parsing)
 
 ## Usage
 
