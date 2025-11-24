@@ -629,6 +629,14 @@ mod cases {
 					 since: "0.5.0".to_string(),
 				 },
 				 Case {
+					 desc: "Blake3".to_string(),
+					 input: vec!["-a", "blake3", "0x616263"].into_iter().map(Into::into).collect(),
+					 output: vec!["0x6437b3ac38465133ffb63b75273a8db548c558465d79db03fd359c6cd5bd9d85"].into_iter().map(Into::into).collect(),
+					 is_example: true,
+					 is_test: true,
+					 since: "0.17.0".to_string(),
+				 },
+				 Case {
 					 desc: "SM3".to_string(),
 					 input: vec!["-a", "sm3", "0x616263"].into_iter().map(Into::into).collect(),
 					 output: vec!["0x66c7f0f462eeedd9d1f2d46bdc10e4e24167c4875cf2f7a2297da02b8f4ba8e0"].into_iter().map(Into::into).collect(),
