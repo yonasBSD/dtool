@@ -1,8 +1,8 @@
 use crate::modules::base::Hex;
 use crate::modules::{base, Command, Module};
+use blake3;
 use clap::{Arg, ArgMatches, SubCommand};
 use crc::crc32;
-
 use lazy_static::lazy_static;
 use ring::digest::{Context, SHA1_FOR_LEGACY_USE_ONLY};
 use sha2::{Digest, Sha224, Sha256, Sha384, Sha512, Sha512Trunc224, Sha512Trunc256};
@@ -11,7 +11,8 @@ use yogcrypt::sm3::sm3_enc;
 
 pub fn module<'a, 'b>() -> Module<'a, 'b> {
 	Module {
-		desc: "Hash (MD5, SHA-1, SHA-2, SHA-3, RIPEMD, CRC, Blake2b, SM3, Twox)".to_string(),
+		desc: "Hash (MD5, SHA-1, SHA-2, SHA-3, RIPEMD, CRC, Blake2b, Blake3, SM3, Twox)"
+			.to_string(),
 		commands: commands(),
 		get_cases: cases::cases,
 	}
@@ -140,6 +141,11 @@ lazy_static! {
 			name: "blake2b_512",
 			help: "Blake2b 512",
 			f: AlgorithmF::WithKey(blake2b_512),
+		},
+		Algorithm {
+			name: "blake3",
+			help: "Blake3",
+			f: AlgorithmF::Normal(blake3_256),
 		},
 		Algorithm {
 			name: "sm3",
@@ -375,6 +381,12 @@ fn blake2b(data: Vec<u8>, size: usize, key: Vec<u8>) -> Result<Vec<u8>, String> 
 	}
 	let hash = params.to_state().update(&data).finalize();
 	Ok(hash.as_bytes().to_vec())
+}
+
+fn blake3_256(data: Vec<u8>) -> Result<Vec<u8>, String> {
+	let result = blake3::hash(data.as_slice()).as_bytes().to_vec();
+
+	Ok(result)
 }
 
 fn sm3(data: Vec<u8>) -> Result<Vec<u8>, String> {
@@ -615,6 +627,14 @@ mod cases {
 					 is_example: false,
 					 is_test: true,
 					 since: "0.5.0".to_string(),
+				 },
+				 Case {
+					 desc: "Blake3".to_string(),
+					 input: vec!["-a", "blake3", "0x616263"].into_iter().map(Into::into).collect(),
+					 output: vec!["0x6437b3ac38465133ffb63b75273a8db548c558465d79db03fd359c6cd5bd9d85"].into_iter().map(Into::into).collect(),
+					 is_example: true,
+					 is_test: true,
+					 since: "0.17.0".to_string(),
 				 },
 				 Case {
 					 desc: "SM3".to_string(),
