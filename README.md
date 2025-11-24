@@ -23,6 +23,7 @@ Now `dtool` supports:
 - [Hex / UTF-8 string / binary / byte array conversion](./docs/Usage.md#hex--utf-8-string--binary--byte-array-conversion)
 - [Timestamp / date conversion](./docs/Usage.md#timestamp--date-conversion)
 - [Number 10/2/8/16 base conversion](./docs/Usage.md#number-102816-base-conversion)
+- [Hex / base32 conversion](./docs/Usage.md#hex--base32-conversion)
 - [Hex / base58 conversion](./docs/Usage.md#hex--base58-conversion)
 - [Hex / base64 conversion](./docs/Usage.md#hex--base64-conversion)
 - [URL encode / decode](./docs/Usage.md#url-encode--decode)
